@@ -50,7 +50,10 @@ function storeData(){
     mail : form.mail.value,
     password : form.password2.value
   }
-  console.log(user);
+  if(isValid && passwordsMatch){
+    console.log(user);
+  }
+
 }
 
 function processFormData(event) {
