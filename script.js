@@ -6,11 +6,12 @@ const message = document.getElementById('message');
 const star = document.getElementById('star');
 
 const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector("#password");
+const password = document.querySelector('#password');
 
 togglePassword.addEventListener('click', function () {
   // toggle the type attribute
-  const type = passwordEl1.getAttribute('type') === 'password' ? 'text' : 'password';
+  const type =
+    passwordEl1.getAttribute('type') === 'password' ? 'text' : 'password';
   passwordEl1.setAttribute('type', type);
 
   // toggle the icon
