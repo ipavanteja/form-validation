@@ -3,11 +3,24 @@ const passwordEl1 = document.getElementById('password1');
 const passwordEl2 = document.getElementById('password2');
 const messageContainer = document.querySelector('.message-container');
 const message = document.getElementById('message');
+const star = document.getElementById('star');
+
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector("#password");
+
+togglePassword.addEventListener('click', function () {
+  // toggle the type attribute
+  const type = passwordEl1.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordEl1.setAttribute('type', type);
+
+  // toggle the icon
+  this.classList.toggle('bi-eye');
+});
 
 let isValid = false;
 let passwordsMatch = false;
 let checkRegister = true;
-let array = [];
+const array = [];
 
 function validateForm() {
   checkRegister = true;
@@ -73,6 +86,7 @@ function validateForm() {
     passwordEl2.style.borderColor = 'green';
   }
 }
+
 function storeData() {
   const user = {
     name: form.name.value,

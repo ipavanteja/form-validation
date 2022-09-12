@@ -78,3 +78,10 @@ button:focus {
   justify-content: center;
   color: black;
 }
+#star {
+  color: red;
+}
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
