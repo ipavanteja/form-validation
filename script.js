@@ -4,6 +4,7 @@ const passwordEl2 = document.getElementById('password2');
 const messageContainer = document.querySelector('.message-container');
 const message = document.getElementById('message');
 const star = document.getElementById('star');
+const reset = document.getElementById('reset');
 
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('#password');
@@ -107,5 +108,11 @@ function processFormData(event) {
   /* --- Storing the Data ---*/
   storeData();
 }
+function resetForm() {
+  form.reset();
+  passwordEl1.style.borderColor = 'red';
+  passwordEl2.style.borderColor = 'red';
+}
 
 form.addEventListener('submit', processFormData);
+reset.addEventListener('click', resetForm);
