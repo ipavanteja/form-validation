@@ -108,8 +108,12 @@ function processFormData(event) {
   /* --- Storing the Data ---*/
   storeData();
 }
+
 function resetForm() {
   form.reset();
+  message.textContent = "Don't Hesitate !";
+  message.style.color = 'black';
+  messageContainer.style.borderColor = 'black';
   passwordEl1.style.borderColor = 'red';
   passwordEl2.style.borderColor = 'red';
 }
