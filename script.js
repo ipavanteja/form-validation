@@ -6,19 +6,6 @@ const message = document.getElementById('message');
 const star = document.getElementById('star');
 const reset = document.getElementById('reset');
 
-const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('#password');
-
-togglePassword.addEventListener('click', function () {
-  // toggle the type attribute
-  const type =
-    passwordEl1.getAttribute('type') === 'password' ? 'text' : 'password';
-  passwordEl1.setAttribute('type', type);
-
-  // toggle the icon
-  this.classList.toggle('bi-eye');
-});
-
 let isValid = false;
 let passwordsMatch = false;
 let checkRegister = true;
@@ -89,6 +76,21 @@ function validateForm() {
   }
 }
 
+/* --- Show Password --- */
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function () {
+  // toggle the type attribute
+  const type =
+    passwordEl1.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordEl1.setAttribute('type', type);
+
+  // toggle the icon
+  this.classList.toggle('bi-eye');
+});
+
+/* --- Storing the Data ---*/
 function storeData() {
   const user = {
     name: form.name.value,
@@ -105,10 +107,11 @@ function processFormData(event) {
   event.preventDefault();
   /* --- Validate Form --- */
   validateForm();
-  /* --- Storing the Data ---*/
+  /* --- Store Data ---*/
   storeData();
 }
 
+/* --- Reset Form --- */
 function resetForm() {
   form.reset();
   message.textContent = "Don't Hesitate !";
@@ -118,5 +121,6 @@ function resetForm() {
   passwordEl2.style.borderColor = 'red';
 }
 
+/* --- Calling All Functions --- */
 form.addEventListener('submit', processFormData);
 reset.addEventListener('click', resetForm);
