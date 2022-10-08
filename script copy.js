@@ -9,7 +9,7 @@ const reset = document.getElementById('reset');
 let isValid = false;
 let passwordsMatch = false;
 let checkRegister = true;
-const database = [];
+const array = [];
 
 function validateForm() {
   checkRegister = true;
@@ -22,7 +22,7 @@ function validateForm() {
     message.textContent = 'Please fill out all fields.';
     message.style.color = 'red';
     messageContainer.style.borderColor = 'red';
-    return 1;
+    return;
   }
 
   /* --- Passwords match setup --- */
@@ -39,13 +39,23 @@ function validateForm() {
     messageContainer.style.borderColor = 'red';
     passwordEl1.style.borderColor = 'red';
     passwordEl2.style.borderColor = 'red';
-    return 1;
+    return;
   }
 
   /* --- Already Registered setup ---*/
-
-  if (database.includes(form.mail.value)) {
-    checkRegister = false;
+  array.push(form.mail.value);
+  if (array.length > 1) {
+    for (let i = 0; i < array.length - 1; i++) {
+      if (array[i] === form.mail.value) {
+        checkRegister = false;
+        if (array.includes(form.mail.value) && checkRegister === false) {
+          array.pop(array.length - 1);
+        }
+        if (checkRegister === false) {
+          break;
+        }
+      }
+    }
   }
 
   /* --- If alreaady registered ---*/
@@ -53,7 +63,7 @@ function validateForm() {
     message.textContent = 'Already Registered.';
     message.style.color = 'red';
     messageContainer.style.borderColor = 'red';
-    return 1;
+    return;
   }
 
   /* --- If form is valid, password match and not registered --- */
@@ -82,7 +92,6 @@ togglePassword.addEventListener('click', function () {
 
 /* --- Storing the Data ---*/
 function storeData() {
-  database.push(form.mail.value);
   const user = {
     name: form.name.value,
     phone: form.phone.value,
@@ -96,13 +105,10 @@ function storeData() {
 
 function processFormData(event) {
   event.preventDefault();
-  console.log(passwordEl1.value);
   /* --- Validate Form --- */
-  const validResponse = validateForm();
+  validateForm();
   /* --- Store Data ---*/
-  if (validResponse != 1) {
-    storeData();
-  }
+  storeData();
 }
 
 /* --- Reset Form --- */
