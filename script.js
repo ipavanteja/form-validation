@@ -43,7 +43,6 @@ function validateForm() {
   }
 
   /* --- Already Registered setup ---*/
-
   if (database.includes(form.mail.value)) {
     checkRegister = false;
   }
@@ -96,7 +95,6 @@ function storeData() {
 
 function processFormData(event) {
   event.preventDefault();
-  console.log(passwordEl1.value);
   /* --- Validate Form --- */
   const validResponse = validateForm();
   /* --- Store Data ---*/
