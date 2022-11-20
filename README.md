@@ -9,6 +9,6 @@ In this prject I mainly focused on [JavaScript.](https://www.javascript.com/)
 ### What this [Form-Validation](https://pavan432.github.io/form-validation/) will do?
 - Takes the user information.
 - If the user enters wrong information, it will warn.
-- Will check whether the user passwords same or not! (main password and confirmation massword).
+- Will check whether the user passwords same or not! (main password and confirmation password).
 - Detect the multiple registrations of a same user.
 - Stores the user data in local storage.
