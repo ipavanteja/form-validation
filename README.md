@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # [Form-Validation](https://pavan432.github.io/form-validation/)
 This is a **web application** page used to validate the user information.\
 This will intract with the user and give access to login, if the user enters accurate information.
@@ -22,4 +22,3 @@ In this prject I mainly focused on [JavaScript.](https://www.javascript.com/)
 - Will check whether the user passwords same or not! (main password and confirmation password).
 - Detect the multiple registrations of a same user.
 - Stores the user data in local storage.
->>>>>>> f9d82f06f700b30c9b5834b752d097df4f27f8af
